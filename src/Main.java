@@ -8,9 +8,9 @@ public class Main {
         while (sum <= 2_459_000) {
             i++;
             sum += contribution;
-            sum = sum + sum / 100;
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + sum + "");
+            sum = sum + sum/100;
         }
+        System.out.println("Итого потребуется "+i+" месяцев, чтобы накопить "+sum+"");
 
         // Задание 2
         System.out.println("Задание 2");
@@ -29,11 +29,10 @@ public class Main {
         int population = 12_000_000;
         int birthRate = 17;
         int mortality = 8;
-        int populationPlus = (birthRate * 1000) - (mortality * 1000);
         int y = 0;
         while (y < 10) {
             y++;
-            population = population + populationPlus;
+            population = population + (population/1000 * (birthRate-mortality));
             System.out.println("Год " + y + ", численность населения составляет " + population + " ");
         }
 
@@ -41,24 +40,24 @@ public class Main {
         System.out.println("Задание 1. ДЗ2");
         int salary = 15000;
         double bank = 0;
-        int m = 0;
+        int month = 0;
         while (bank <= 12_000_000) {
-            m++;
+            month++;
             bank = bank + salary;
             bank = bank + bank * 0.07;
-            System.out.println("Месяц " + m + ", сумма накоплений " + Math.round(bank) + "");
+            System.out.println("Месяц " + month + ", сумма накоплений " + Math.round(bank) + "");
         }
         // Задание 2. ДЗ2
         System.out.println("Задание 2. ДЗ2");
         int salaryN = 15000;
         double bank1 = 0;
-        int month = 0;
+        int month1 = 0;
         while (bank1 <= 12_000_000) {
-            month++;
+            month1++;
             bank1 = bank1 + salaryN;
             bank1 = bank1 + bank1 * 0.07;
             if (month % 6 == 0) {
-                System.out.println("Месяц " + month + ", сумма накоплений " + Math.round(bank1) + "");
+                System.out.println("Месяц " + month1 + ", сумма накоплений " + Math.round(bank1) + "");
             }
         }
         // Задание 3. ДЗ2
@@ -77,19 +76,19 @@ public class Main {
 
         // Задание 4. ДЗ2
         System.out.println("Задание 4. ДЗ2");
-        int friday = 7;
-        for (friday=7; friday<=31; friday+=7){
+        for (int friday=7; friday<=31; friday+=7){
             System.out.println("Сегодня пятница, "+ friday +"-е число. Необходимо подготовить отчет");
         }
 
         // Задание 1. ДЗ3.
         System.out.println("Задание 1. ДЗ3");
-        int yearStart = 1817;
-        int yearFinal = 2054;
-        while (yearFinal>yearStart){
-            yearStart+=79;
-            System.out.println("Год "+yearStart);
+        int yearStart = 0;
+        do { yearStart += 79;
+            if (yearStart + 200 > 2022){
+                System.out.println(yearStart);
+            }
         }
+        while (yearStart < 2022);
 
         // Задание 2. ДЗ3.
         System.out.println("Задание 2. ДЗ3");
